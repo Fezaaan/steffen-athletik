@@ -1,6 +1,18 @@
 # steffen-athletik
 
-Statische Website, aufgebaut wie `meat_me`.
+Neue Website für Steffen Goller (Personaltraining, bisher www.steffen-bewegt.de),
+im Stil und Aufbau von `meat_me`. Rein statisch: kein Framework, keine externen
+Schriften, keine Cookies, keine Dienste Dritter.
+
+## Dateien
+- `index.html` – Startseite (Angebote, Kurse, Ablauf, Fragen, Kontakt, Partner)
+- `impressum.html`, `datenschutz.html` – Rechtsseiten
+- `css/styles.css` – Gestaltung (Akzentfarbe `--acc`), `js/main.js` – Scroll-Effekte
+- `images/` – Fotos und Logo, alles lokal
+
+## Vor dem Livegang ausfüllen
+Alle Platzhalter sind als `<span class="todo">[…]</span>` markiert (`grep -n todo *.html`):
+Telefon, E-Mail, Anschrift, USt-IdNr. Außerdem den Hoster in `datenschutz.html` prüfen.
 
 ## Branches
 - `main` – Produktion. Jeder Push baut ein Docker-Image (nginx) und lädt es nach
