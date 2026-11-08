@@ -27,6 +27,7 @@ Options -Indexes
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType image/webp "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType video/mp4 "access plus 30 days"
   ExpiresByType text/css "access plus 1 day"
   ExpiresByType application/javascript "access plus 1 day"
@@ -35,3 +36,4 @@ Options -Indexes
 
 AddType video/mp4 .mp4
 AddType image/webp .webp
+AddType font/woff2 .woff2

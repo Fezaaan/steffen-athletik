@@ -7,7 +7,8 @@ Schriften, keine Cookies, keine Dienste Dritter.
 ## Dateien
 - `index.html` – Startseite (Angebote, Kurse, Ablauf, Fragen, Kontakt, Partner)
 - `impressum.html`, `datenschutz.html` – Rechtsseiten
-- `css/styles.css` – Gestaltung (Akzentfarbe `--acc`), `js/main.js` – Scroll-Effekte
+- `css/styles.css` – Gestaltung (hell, Akzentfarbe `--red`), `js/main.js` – Scroll-Effekte
+- `fonts/` – Bebas Neue und Quicksand, lokal eingebunden (SIL Open Font License)
 - `images/` – Fotos und Logo, alles lokal
 
 ## Vor dem Livegang ausfüllen
