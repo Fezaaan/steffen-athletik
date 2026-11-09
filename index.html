@@ -10,7 +10,7 @@
   <meta property="og:description" content="Professionelles Training und Fitness: abwechslungsreiche Workouts, die Ihren individuellen Bedürfnissen entsprechen." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="images/logo-mark.svg" type="image/svg+xml" />
-  <link rel="preload" href="fonts/bebas-neue-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/noto-sans-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/styles.css" />
   <script type="application/ld+json">
   {
@@ -26,145 +26,144 @@
 </head>
 
 <body>
-<a class="skip-link" href="#angebote">Direkt zu den Angeboten</a>
+<a class="skip-link" href="#training">Direkt zum Inhalt</a>
 
 <header class="nav" id="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#top" aria-label="Steffen Goller, zum Seitenanfang"><img class="mk" src="images/logo-mark.svg" alt="" width="42" height="42" /><span>Steffen <b>Goller</b></span></a>
+  <div class="nav-in">
+    <a class="logo" href="#top" aria-label="Steffen Goller, zum Seitenanfang"><img class="mk" src="images/logo-mark.svg" alt="" width="40" height="40" /><span>Steffen <b>Goller</b></span></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
-      <a class="link" href="#angebote">Angebote</a>
+      <a class="link" href="#training">Personal Training</a>
+      <a class="link" href="#group">Group Training</a>
       <a class="link" href="#kurse">Kurse</a>
-      <a class="link" href="#ablauf">Ablauf</a>
+      <a class="link" href="#partner">Partner</a>
       <a class="link" href="#kontakt">Kontakt</a>
-      <a class="btn btn-sm" href="#kontakt">Probetraining</a>
     </nav>
+    <div class="nav-aktion">
+      <a class="btn btn-sm" href="#kontakt">Probetraining</a>
+      <a class="icon-btn" href="#kontakt" aria-label="Kontakt">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
   </div>
 </header>
 
+<!-- Feste Lasche am rechten Rand -->
+<a class="lasche" href="#kontakt">
+  <svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true"><path d="M22 27c-1.6-2-2.4-4.2-2.4-6.6C19.6 14.6 25 11 32 11s12.4 3.6 12.4 9.4c0 2.4-.8 4.6-2.4 6.6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="38" r="15" fill="currentColor"/></svg>
+  <span>Probetraining</span>
+</a>
+
 <main id="top">
 
-<!-- Hero: hell, große Überschrift links, Foto rechts -->
+<!-- Hero: farbige Fläche aus dem linken Rand, rechts abgerundet -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <p class="eyebrow">Personaltraining · funktionelles Training</p>
-      <h1 class="hero-titel">Steffen <span class="rot">bewegt.</span><br />Professionelles Training und Fitness.</h1>
-      <p class="sub">Abwechslungsreiche Workouts, die Ihren individuellen Bedürfnissen entsprechen. Im Kreis Bruchsal und Karlsruhe.</p>
-      <div class="hero-cta">
-        <a class="btn" href="#kontakt">Probetraining vereinbaren</a>
-        <a class="btn btn-ghost" href="#angebote">Angebote ansehen</a>
-      </div>
-      <ul class="hero-trust">
-        <li>1:1 oder Kleingruppe</li>
-        <li>Training, wo Sie es wünschen</li>
-        <li>Tipps zur Ernährung</li>
-      </ul>
+  <div class="panel panel-links">
+    <svg class="schwung" viewBox="0 0 600 400" aria-hidden="true" preserveAspectRatio="none"><path d="M-20 360 C 120 300, 200 120, 360 140 S 560 320, 640 60" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="2"/><path d="M-20 400 C 160 340, 260 200, 400 220 S 580 380, 660 160" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/></svg>
+    <div class="panel-inhalt">
+      <h1>Personal Training</h1>
+      <p class="panel-lead">Professionelles Training und Fitness im Kreis Bruchsal und Karlsruhe. Abwechslungsreiche Workouts, die Ihren individuellen Bedürfnissen entsprechen – dort, wo Sie es wünschen.</p>
+      <a class="btn btn-weiss" href="#kontakt">Kontakt aufnehmen</a>
     </div>
-    <figure class="hero-bild">
+    <figure class="panel-bild">
       <img src="images/steffen-goller.jpg" alt="Steffen Goller beim Training mit einem Ball" width="135" height="596" fetchpriority="high" />
-      <figcaption><b>Steffen Goller</b>Personaltrainer</figcaption>
     </figure>
   </div>
+  <p class="seitenlabel seitenlabel-rechts" aria-hidden="true">personal training bei steffen</p>
 </section>
 
 
-<!-- Rotes Band: das Versprechen -->
-<section class="band" id="training" aria-labelledby="band-titel">
-  <div class="wrap band-in reveal">
-    <h2 id="band-titel">Von mir bekommen Sie das nötige Know-how.</h2>
-    <p>Sie erhalten nicht nur ein Training, sondern auch Tipps für eine ausgewogene und gesunde Ernährung.</p>
-    <p>Mit steigender Fitness kann Ihnen der Stress in Beruf und Alltag weniger anhaben.</p>
-    <p class="band-claim">Viel Spaß beim Training!</p>
+<!-- Personal Training: Text links, Foto-Karte rechts -->
+<section class="inhalt" id="training">
+  <p class="seitenlabel seitenlabel-links" aria-hidden="true">unser personal training</p>
+  <div class="wrap inhalt-grid">
+    <div class="text reveal">
+      <h2>Personal Training Bruchsal &amp; Karlsruhe</h2>
+      <p class="lead">Von mir bekommen Sie das notwendige Know-how.</p>
+      <p>Abwechslungsreiche Workouts, die Ihren individuellen Bedürfnissen entsprechen. Sie erhalten Tipps für eine ausgewogene und gesunde Ernährung. Mit steigender Fitness kann Ihnen der Stress in Beruf und Alltag weniger anhaben.</p>
+      <p>Wir trainieren, wo Sie es wünschen: bei Ihnen zu Hause, im Park um die Ecke oder im Stadion Ihrer Stadt.</p>
+
+      <h3>1:1 Training</h3>
+      <p>Sie und Ihr Trainer. Jedes Workout richtet sich ganz nach Ihren Zielen und Bedürfnissen.</p>
+
+      <h3>Kleingruppen (max. 1:6)</h3>
+      <p>Gemeinsam mit bis zu fünf weiteren Personen trainieren und trotzdem persönlich betreut werden.</p>
+
+      <a class="btn" href="#kontakt">Termin vereinbaren</a>
+    </div>
   </div>
-</section>
 
-
-<!-- Angebote: Karten in zwei Gruppen -->
-<section class="angebote" id="angebote">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>Training, wie es <span class="rot">zu Ihnen passt.</span></h2>
-      <p>Allein, in der Kleingruppe, im Kurs oder mit Ihrem ganzen Team.</p>
-    </div>
-
-    <h3 class="gruppe reveal">Personal-Training</h3>
-    <div class="karten karten-2">
-      <article class="karte reveal">
-        <span class="karte-nr">01</span>
-        <h3>1:1 Training</h3>
-        <p>Sie und Ihr Trainer. Jedes Workout richtet sich ganz nach Ihren Zielen und Bedürfnissen.</p>
-      </article>
-      <article class="karte reveal">
-        <span class="karte-nr">02</span>
-        <h3>Kleingruppen <span class="rot">[max. 1:6]</span></h3>
-        <p>Gemeinsam mit bis zu fünf weiteren Personen trainieren und trotzdem persönlich betreut werden.</p>
-      </article>
-    </div>
-
-    <h3 class="gruppe reveal">Group-Training</h3>
-    <div class="karten karten-3">
-      <article class="karte reveal">
-        <span class="karte-nr">03</span>
-        <h3>Kurse</h3>
-        <p>Kettlebell und Nordic Walking. <a class="textlink" href="#kurse">Zu den Kursen</a></p>
-      </article>
-      <article class="karte reveal">
-        <span class="karte-nr">04</span>
-        <h3>Teamtraining</h3>
-        <p>Training für Ihre Mannschaft, zum Beispiel Ihre Fußballmannschaft.</p>
-      </article>
-      <article class="karte reveal">
-        <span class="karte-nr">05</span>
-        <h3>Firmenfitness</h3>
-        <p>Training für Ihr Unternehmen und Ihre Mitarbeiterinnen und Mitarbeiter.</p>
-      </article>
+  <!-- Group Training: Kacheln wie Standorte -->
+  <div class="wrap" id="group">
+    <h3 class="kachel-titel reveal">Group Training</h3>
+    <div class="kacheln">
+      <a class="kachel reveal" href="#kurse"><span class="kachel-name">Kurse</span><span class="kachel-text">Kettlebell &amp; Nordic Walking</span></a>
+      <div class="kachel reveal"><span class="kachel-name">Teamtraining</span><span class="kachel-text">z. B. Ihre Fußballmannschaft</span></div>
+      <div class="kachel reveal"><span class="kachel-name">Firmenfitness</span><span class="kachel-text">für Ihr Unternehmen</span></div>
     </div>
   </div>
 </section>
 
 
-<!-- Kurse: Bild links, Text rechts -->
-<section class="kurse" id="kurse" aria-labelledby="kurse-titel">
-  <div class="wrap split">
-    <figure class="split-bild reveal">
+<!-- Kurse: zweite farbige Fläche -->
+<section class="kurse" id="kurse">
+  <div class="panel panel-links panel-kurs">
+    <svg class="schwung" viewBox="0 0 600 400" aria-hidden="true" preserveAspectRatio="none"><path d="M-20 80 C 140 160, 220 360, 380 300 S 560 60, 640 120" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2"/></svg>
+    <div class="panel-inhalt">
+      <h2>Kettlebelltraining – neu in Bruchsal</h2>
+      <p class="panel-lead">Einfach. Schnell. Effektiv.</p>
+      <p class="panel-text">Außerdem im Kursangebot: Nordic Walking. Gemeinsam trainieren, in der Gruppe motivieren.</p>
+      <a class="btn btn-weiss" href="#kontakt">Kurs anfragen</a>
+    </div>
+    <figure class="panel-bild panel-bild-plakat">
       <img src="images/kettlebell-kurs.jpg" alt="Plakat: Kettlebelltraining – einfach, schnell, effektiv. Neu in Bruchsal." width="160" height="273" />
     </figure>
-    <div class="split-text reveal">
-      <p class="eyebrow">Kursangebot</p>
-      <h2 id="kurse-titel">Kettlebell&shy;training <span class="rot">[neu in Bruchsal]</span></h2>
-      <p class="kurs-claim">Einfach. Schnell. Effektiv.</p>
-      <h3 class="kurs-zweit">Nordic Walking</h3>
-      <p>Gemeinsam trainieren, in der Gruppe motivieren: Bewegung an der frischen Luft.</p>
-      <a class="btn" href="#kontakt">Kurs anfragen</a>
-    </div>
+  </div>
+  <p class="seitenlabel seitenlabel-rechts" aria-hidden="true">kursangebot</p>
+</section>
+
+
+<!-- Ablauf -->
+<section class="ablauf" id="ablauf">
+  <div class="wrap">
+    <h2 class="mitte reveal">…so funktioniert's</h2>
+    <ol class="schritte">
+      <li class="schritt reveal"><span class="schritt-nr">1</span><h3>Probetraining anfragen</h3><p>Melden Sie sich per Telefon oder E-Mail.</p></li>
+      <li class="schritt reveal"><span class="schritt-nr">2</span><h3>Kennenlernen</h3><p>Im Probetraining besprechen wir alle offenen Fragen, und Sie überzeugen sich von der Qualität des Trainings.</p></li>
+      <li class="schritt reveal"><span class="schritt-nr">3</span><h3>Ort wählen</h3><p>Zu Hause, im Park oder im Stadion. Sie entscheiden.</p></li>
+      <li class="schritt reveal"><span class="schritt-nr">4</span><h3>Termine buchen</h3><p>Sagt Ihnen das Training zu, vereinbaren wir weitere Termine.</p></li>
+    </ol>
   </div>
 </section>
 
 
-<!-- Ablauf: vier Schritte mit großen Nummern -->
-<section class="ablauf" id="ablauf">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <h2>…so <span class="rot">funktioniert's.</span></h2>
-      <p>Wir trainieren, wo Sie es wünschen: bei Ihnen zu Hause, im Park um die Ecke oder im Stadion Ihrer Stadt.</p>
+<!-- Partner: graue Fläche aus dem rechten Rand -->
+<section class="partner-sec" id="partner">
+  <p class="seitenlabel seitenlabel-links" aria-hidden="true">partner</p>
+  <div class="grau-rechts">
+    <div class="grau-inhalt">
+      <h2>Unsere Partner</h2>
+      <ul class="logo-raster">
+        <li>
+          <a href="http://www.physiorun.de/" target="_blank" rel="noopener">
+            <span class="partner-name">Podschwadt<br />Physiotherapie</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.hae-server.de/" target="_blank" rel="noopener">
+            <img src="images/partner-hae-bilddesign.jpg" alt="hae-bilddesign" width="160" height="37" />
+            <span class="partner-text">Eventfotos, Hochzeiten</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <ol class="schritte">
-      <li class="schritt reveal"><span class="schritt-nr">01</span><h3>Probetraining anfragen</h3><p>Melden Sie sich per Telefon oder E-Mail.</p></li>
-      <li class="schritt reveal"><span class="schritt-nr">02</span><h3>Kennenlernen</h3><p>Im Probetraining besprechen wir alle offenen Fragen, und Sie können sich von der Qualität des Trainings überzeugen.</p></li>
-      <li class="schritt reveal"><span class="schritt-nr">03</span><h3>Ort wählen</h3><p>Zu Hause, im Park oder im Stadion. Sie entscheiden.</p></li>
-      <li class="schritt reveal"><span class="schritt-nr">04</span><h3>Termine buchen</h3><p>Sagt Ihnen das Training zu, vereinbaren wir weitere Termine.</p></li>
-    </ol>
   </div>
 </section>
 
 
 <!-- Häufige Fragen -->
 <section class="fragen" id="fragen">
-  <div class="wrap fragen-grid">
-    <div class="sec-head reveal">
-      <h2>Häufige <span class="rot">Fragen</span></h2>
-      <p>Die wichtigsten Antworten vorab.</p>
-    </div>
+  <div class="wrap fragen-wrap">
+    <h2 class="mitte reveal">Häufige Fragen</h2>
     <div class="faq-liste">
       <details class="faq-eintrag reveal">
         <summary><h3>Wo findet das Training statt?</h3></summary>
@@ -191,36 +190,20 @@
 </section>
 
 
-<!-- Kontakt und Partner -->
+<!-- Kontakt: dunkle Fläche aus dem rechten Rand -->
 <section class="kontakt" id="kontakt">
-  <div class="wrap kontakt-grid">
-    <div class="kontakt-info reveal">
-      <h2>Probetraining <span class="rot">vereinbaren.</span></h2>
-      <p class="kontakt-lead">Personaltraining im Kreis Bruchsal und Karlsruhe. Schreiben Sie mir oder rufen Sie an.</p>
-      <!-- TODO: Telefonnummer und E-Mail eintragen (auch in impressum.html und datenschutz.html) -->
-      <dl class="kontakt-daten">
-        <div><dt>Telefon</dt><dd><span class="todo">[Telefonnummer]</span></dd></div>
-        <div><dt>E-Mail</dt><dd><span class="todo">[E-Mail-Adresse]</span></dd></div>
-        <div><dt>Region</dt><dd>Bruchsal &amp; Karlsruhe</dd></div>
-      </dl>
-    </div>
-
-    <div class="partner reveal" id="partner">
-      <h3>Partner</h3>
-      <ul class="partner-liste">
-        <li>
-          <a href="http://www.physiorun.de/" target="_blank" rel="noopener">
-            <span class="partner-name">Podschwadt Physiotherapie</span>
-            <span class="partner-text">Physiotherapie</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.hae-server.de/" target="_blank" rel="noopener">
-            <img src="images/partner-hae-bilddesign.jpg" alt="hae-bilddesign" width="160" height="37" />
-            <span class="partner-text">Eventfotos, Hochzeiten</span>
-          </a>
-        </li>
-      </ul>
+  <h2 class="mitte akzent reveal">Kontakt und Probetraining</h2>
+  <div class="dunkel-rechts">
+    <div class="dunkel-inhalt">
+      <div class="kontakt-block">
+        <h3>Steffen Goller – Personaltraining</h3>
+        <p>Kreis Bruchsal und Karlsruhe<br />Training bei Ihnen zu Hause, im Park oder im Stadion</p>
+        <!-- TODO: Telefonnummer und E-Mail eintragen (auch in impressum.html und datenschutz.html) -->
+        <p class="kontakt-zeile">
+          <span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="todo">[Telefonnummer]</span></span>
+          <span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="todo">[E-Mail-Adresse]</span></span>
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -229,14 +212,11 @@
 
 <footer>
   <div class="wrap foot-in">
-    <a class="logo" href="#top"><img class="mk" src="images/logo-mark.svg" alt="" width="42" height="42" /><span>Steffen <b>Goller</b></span></a>
+    <div class="foot-cr">Copyright <span id="footYear">2026</span> Steffen Goller – Personaltraining</div>
     <div class="foot-links">
-      <a href="#angebote">Angebote</a>
-      <a href="#kontakt">Kontakt</a>
-      <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
+      <a href="impressum.html">Impressum</a>
     </div>
-    <div class="foot-cr">© <span id="footYear">2026</span> Steffen Goller</div>
   </div>
 </footer>
 
