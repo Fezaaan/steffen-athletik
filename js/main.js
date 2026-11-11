@@ -1,5 +1,5 @@
 /* Steffen Goller – Interaktion
-   Jahr im Fuß, Navigation beim Scrollen, Anfrage in fünf Schritten. Läuft auch auf den Rechtsseiten (alles mit Null-Checks). */
+   Jahr im Fuß, Navigation beim Scrollen, Aufklappmenü, Anfrage in fünf Schritten. Läuft auch auf den Rechtsseiten (alles mit Null-Checks). */
 (function () {
   "use strict";
 
@@ -13,6 +13,17 @@
     var onNav = function () { nav.classList.toggle("scrolled", window.scrollY > 10); };
     window.addEventListener("scroll", onNav, { passive: true });
     onNav();
+  }
+
+  /* ---------- Aufklappmenü: schließt bei Klick daneben, bei Escape und nach Auswahl ---------- */
+  var menue = document.getElementById("menue");
+  if (menue) {
+    document.addEventListener("click", function (ev) {
+      if (menue.open && (!menue.contains(ev.target) || ev.target.closest(".menue-feld a"))) menue.open = false;
+    });
+    document.addEventListener("keydown", function (ev) {
+      if (ev.key === "Escape" && menue.open) { menue.open = false; menue.querySelector("summary").focus(); }
+    });
   }
 
   /* ---------- Anfrage in fünf Schritten ----------

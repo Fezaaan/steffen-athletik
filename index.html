@@ -30,15 +30,26 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#top" aria-label="Steffen Goller, zum Seitenanfang"><img class="mk" src="images/logo-mark.svg" alt="" width="32" height="32" /><span>Steffen Goller</span></a>
-    <nav class="nav-links" aria-label="Hauptnavigation">
-      <a class="link" href="#training">Personal Training</a>
-      <a class="link" href="#group">Group Training</a>
-      <a class="link" href="#kurse">Kurse</a>
-      <a class="link" href="#ueber-mich">Über mich</a>
-      <a class="link" href="#kontakt">Kontakt</a>
-      <a class="btn btn-sm" href="#kontakt">Probetraining</a>
-    </nav>
+    <div class="nav-links-l">
+      <details class="menue" id="menue">
+        <summary aria-label="Menü"><span class="menue-icon" aria-hidden="true"></span><span class="menue-wort">Menü</span></summary>
+        <nav class="menue-feld" aria-label="Hauptnavigation">
+          <ul>
+          <li><a href="#top" aria-current="page">Startseite</a></li>
+          <li><a href="training.html">Training</a></li>
+          <li><a href="ueber-mich.html">Über mich</a></li>
+          <li><a href="#kurse">Kurse</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+          <ul class="menue-klein">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </nav>
+      </details>
+      <a class="logo" href="#top" aria-label="Steffen Goller, zum Seitenanfang"><img class="mk" src="images/logo-mark.svg" alt="" width="32" height="32" /><span>Steffen Goller</span></a>
+    </div>
+    <a class="btn btn-sm" href="#kontakt">Probetraining</a>
   </div>
 </header>
 
