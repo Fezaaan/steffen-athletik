@@ -143,11 +143,56 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 /* ---------- Kontakt ---------- */
 .kontakt{background:var(--nacht);color:var(--nacht-text);padding:112px 0}
 .kontakt h2,.kontakt h3{color:#fff}
+.kontakt-inhalt{margin-top:48px}
 .kontakt-inhalt p{margin-top:10px}
-.kontakt-liste{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--nacht-linie)}
-.kontakt-liste li{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid var(--nacht-linie);color:#fff;font-size:18px}
+.kontakt-liste{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--nacht-linie)}
+.kontakt-liste li{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--nacht-linie);color:#fff;font-size:17px}
 .kontakt-liste svg{flex:none;color:var(--nacht-text)}
 .todo{background:var(--akzent-hell);color:var(--akzent-dunkel);padding:2px 8px;border-radius:6px;font-size:.9em;font-weight:500}
+
+/* Anfrage in fünf Schritten: weiße Karte auf dunklem Grund */
+.anfrage{background:#fff;color:var(--text);border-radius:20px;padding:40px}
+.anfrage-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.anfrage-titel{font-size:15px;font-weight:600;color:var(--ink)}
+.anfrage-stand{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.anfrage-balken{height:3px;margin:16px 0 32px;background:var(--line);border-radius:3px;overflow:hidden}
+.anfrage-balken span{display:block;height:100%;width:20%;background:var(--akzent);border-radius:3px;transition:width .3s var(--ease)}
+.f-schritt{margin:0;padding:0;border:0;min-width:0}
+.f-schritt+.f-schritt{margin-top:40px}
+.anfrage.js .f-schritt+.f-schritt{margin-top:0}
+.f-schritt legend{padding:0;font-size:clamp(22px,2vw,26px);line-height:1.2;font-weight:600;letter-spacing:-.02em;color:var(--ink);outline:0}
+.f-hinweis{margin-top:8px;font-size:15px;color:var(--muted)}
+.wahl-gruppe{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.wahl{position:relative;cursor:pointer}
+.wahl input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.wahl span{display:flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;
+  font-size:16px;font-weight:500;color:var(--ink);transition:border-color .15s ease,background .15s ease}
+.wahl span::before{content:"";flex:none;width:16px;height:16px;border:1.5px solid #AEB8C1;border-radius:4px;background:#fff center/12px no-repeat;
+  transition:background-color .15s ease,border-color .15s ease}
+.wahl:hover span{border-color:#AEB8C1}
+.wahl input:checked+span{border-color:var(--akzent);background:var(--akzent-hell)}
+.wahl input:checked+span::before{border-color:var(--akzent);background-color:var(--akzent);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m2.5 6.2 2.3 2.3 4.7-5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.wahl input:focus-visible+span{outline:2px solid var(--akzent);outline-offset:2px}
+.feld{display:block;margin-top:24px}
+.feld>span{display:block;margin-bottom:8px;font-size:15px;font-weight:500;color:var(--ink)}
+.feld small{font-size:inherit;font-weight:400;color:var(--muted)}
+.feld input,.feld textarea{display:block;width:100%;padding:13px 14px;border:1px solid #C9D1D8;border-radius:10px;background:#fff;
+  font:inherit;font-size:16px;color:var(--ink);transition:border-color .15s ease,box-shadow .15s ease}
+.feld textarea{resize:vertical;min-height:140px;line-height:1.5}
+.feld input:focus,.feld textarea:focus{outline:0;border-color:var(--akzent);box-shadow:0 0 0 3px var(--akzent-hell)}
+.f-klein{margin-top:20px;font-size:14px;line-height:1.55;color:var(--muted)}
+.f-klein a{color:var(--akzent)}
+.f-fehler{margin-top:20px;padding:12px 14px;border-radius:10px;background:#FCEDEC;color:#A32620;font-size:15px;font-weight:500}
+.anfrage-fuss{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:32px}
+.anfrage-fuss .btn{margin-left:auto}
+.f-zurueck{padding:10px 0;border:0;background:none;font:inherit;font-size:16px;font-weight:500;color:var(--text);cursor:pointer}
+.f-zurueck:hover{color:var(--ink)}
+.anfrage-fertig{outline:0}
+.anfrage-fertig .anfrage-titel{font-size:clamp(22px,2vw,26px);letter-spacing:-.02em}
+.anfrage-fertig p+p{margin-top:10px}
+.anfrage-fertig pre{margin:24px 0 0;padding:20px;border-radius:12px;background:var(--bg-soft);font:inherit;font-size:15px;line-height:1.6;
+  color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
 
 /* ---------- Fuß ---------- */
 footer{background:var(--nacht);color:var(--nacht-text);padding:0 0 40px}
@@ -224,6 +269,8 @@ main:has(.legal-main)+footer .foot-in{border-top:0}
   .schritt-nr{margin-bottom:16px}
   .faq-eintrag p{padding-right:0}
   .kontakt{padding:72px 0}
+  .anfrage{padding:28px 20px;border-radius:16px;margin-inline:-8px}
+  .wahl span{padding:11px 14px}
   .foot-in{flex-direction:column;align-items:flex-start}
   .legal-hero{padding:48px 0 36px}
   .legal-main{padding:40px 0 80px}

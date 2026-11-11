@@ -188,21 +188,115 @@
 </section>
 
 
-<!-- Kontakt -->
+<!-- Kontakt: Angaben links, Anfrage in fünf Schritten rechts -->
 <section class="kontakt" id="kontakt">
   <div class="wrap zeile">
     <div class="zeile-kopf">
       <h2>Kontakt und Probetraining</h2>
+      <div class="kontakt-inhalt">
+        <h3>Steffen Goller – Personaltraining</h3>
+        <p>Kreis Bruchsal und Karlsruhe<br />Training bei Ihnen zu Hause, im Park oder im Stadion</p>
+        <!-- TODO: Telefonnummer und E-Mail eintragen (auch in impressum.html und datenschutz.html) -->
+        <ul class="kontakt-liste">
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="todo">[Telefonnummer]</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="todo">[E-Mail-Adresse]</span></li>
+        </ul>
+      </div>
     </div>
-    <div class="kontakt-inhalt">
-      <h3>Steffen Goller – Personaltraining</h3>
-      <p>Kreis Bruchsal und Karlsruhe<br />Training bei Ihnen zu Hause, im Park oder im Stadion</p>
-      <!-- TODO: Telefonnummer und E-Mail eintragen (auch in impressum.html und datenschutz.html) -->
-      <ul class="kontakt-liste">
-        <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="todo">[Telefonnummer]</span></li>
-        <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="todo">[E-Mail-Adresse]</span></li>
-      </ul>
-    </div>
+
+    <!-- TODO: In data-email die E-Mail-Adresse eintragen, an die Anfragen gehen sollen.
+         Solange das Feld leer ist, kann die Anfrage am Ende nur kopiert werden. -->
+    <form class="anfrage" id="anfrage" data-email="" novalidate>
+      <div class="anfrage-kopf">
+        <p class="anfrage-titel">Anfrage in fünf Schritten</p>
+        <p class="anfrage-stand" id="anfrage-stand" aria-live="polite"></p>
+      </div>
+      <div class="anfrage-balken" aria-hidden="true"><span id="anfrage-balken"></span></div>
+
+      <fieldset class="f-schritt">
+        <legend tabindex="-1">Was interessiert Sie?</legend>
+        <p class="f-hinweis">Mehrere Antworten möglich.</p>
+        <div class="wahl-gruppe">
+            <label class="wahl"><input type="checkbox" name="Interesse" value="1:1 Training" /><span>1:1 Training</span></label>
+            <label class="wahl"><input type="checkbox" name="Interesse" value="Kleingruppe" /><span>Kleingruppe</span></label>
+            <label class="wahl"><input type="checkbox" name="Interesse" value="Kettlebell-Kurs" /><span>Kettlebell-Kurs</span></label>
+            <label class="wahl"><input type="checkbox" name="Interesse" value="Nordic Walking" /><span>Nordic Walking</span></label>
+            <label class="wahl"><input type="checkbox" name="Interesse" value="Teamtraining" /><span>Teamtraining</span></label>
+            <label class="wahl"><input type="checkbox" name="Interesse" value="Firmenfitness" /><span>Firmenfitness</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="f-schritt">
+        <legend tabindex="-1">Worum soll es im Training gehen?</legend>
+        <p class="f-hinweis">Mehrere Antworten möglich.</p>
+        <div class="wahl-gruppe">
+            <label class="wahl"><input type="checkbox" name="Schwerpunkt" value="Athletik" /><span>Athletik</span></label>
+            <label class="wahl"><input type="checkbox" name="Schwerpunkt" value="Leichtathletik" /><span>Leichtathletik</span></label>
+            <label class="wahl"><input type="checkbox" name="Schwerpunkt" value="Kraft" /><span>Kraft</span></label>
+            <label class="wahl"><input type="checkbox" name="Schwerpunkt" value="Ausdauer" /><span>Ausdauer</span></label>
+            <label class="wahl"><input type="checkbox" name="Schwerpunkt" value="Ernährung" /><span>Ernährung</span></label>
+        </div>
+        <label class="feld"><span>Etwas anderes? <small>(optional)</small></span>
+          <input type="text" name="Eigener Schwerpunkt" maxlength="120" autocomplete="off" />
+        </label>
+      </fieldset>
+
+      <fieldset class="f-schritt">
+        <legend tabindex="-1">Wo möchten Sie trainieren?</legend>
+        <p class="f-hinweis">Mehrere Antworten möglich.</p>
+        <div class="wahl-gruppe">
+            <label class="wahl"><input type="checkbox" name="Trainingsort" value="Bei mir zu Hause" /><span>Bei mir zu Hause</span></label>
+            <label class="wahl"><input type="checkbox" name="Trainingsort" value="Im Park" /><span>Im Park</span></label>
+            <label class="wahl"><input type="checkbox" name="Trainingsort" value="Im Stadion" /><span>Im Stadion</span></label>
+            <label class="wahl"><input type="checkbox" name="Trainingsort" value="Noch offen" /><span>Noch offen</span></label>
+        </div>
+        <label class="feld"><span>Ihr Wohnort <small>(optional)</small></span>
+          <input type="text" name="Wohnort" maxlength="80" autocomplete="address-level2" />
+        </label>
+      </fieldset>
+
+      <fieldset class="f-schritt">
+        <legend tabindex="-1">Möchten Sie noch etwas mitteilen?</legend>
+        <p class="f-hinweis">Zum Beispiel Ihre Ziele, Ihre Erfahrung oder wann es Ihnen zeitlich passt.</p>
+        <label class="feld"><span>Ihre Nachricht <small>(optional)</small></span>
+          <textarea name="Nachricht" rows="6" maxlength="800"></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset class="f-schritt">
+        <legend tabindex="-1">Wie erreiche ich Sie?</legend>
+        <p class="f-hinweis">Name und entweder E-Mail oder Telefon.</p>
+        <label class="feld"><span>Name</span>
+          <input type="text" name="Name" maxlength="80" autocomplete="name" />
+        </label>
+        <label class="feld"><span>E-Mail</span>
+          <input type="email" name="E-Mail" maxlength="120" autocomplete="email" />
+        </label>
+        <label class="feld"><span>Telefon</span>
+          <input type="tel" name="Telefon" maxlength="40" autocomplete="tel" />
+        </label>
+        <p class="f-klein">Ihre Angaben werden nicht auf dieser Website gespeichert. Beim Absenden öffnet sich Ihr E-Mail-Programm mit der fertigen Anfrage. Mehr dazu in der <a href="datenschutz.html#kontakt">Datenschutzerklärung</a>.</p>
+      </fieldset>
+
+      <p class="f-fehler" id="anfrage-fehler" role="alert" hidden></p>
+
+      <div class="anfrage-fuss">
+        <button type="button" class="f-zurueck" id="anfrage-zurueck" hidden>Zurück</button>
+        <button type="submit" class="btn" id="anfrage-weiter">Weiter</button>
+      </div>
+
+      <div class="anfrage-fertig" id="anfrage-fertig" tabindex="-1" hidden>
+        <p class="anfrage-titel">Ihre Anfrage ist fertig.</p>
+        <p id="anfrage-fertig-text"></p>
+        <pre id="anfrage-zusammenfassung"></pre>
+        <div class="anfrage-fuss">
+          <button type="button" class="f-zurueck" id="anfrage-aendern">Angaben ändern</button>
+          <button type="button" class="btn" id="anfrage-kopieren">Text kopieren</button>
+        </div>
+      </div>
+
+      <noscript><p class="f-klein">Für das Formular bitte JavaScript aktivieren, oder melden Sie sich direkt per Telefon oder E-Mail.</p></noscript>
+    </form>
   </div>
 </section>
 

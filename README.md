@@ -8,6 +8,7 @@ Schriften, keine Cookies, keine Dienste Dritter.
 - `index.html` – Startseite (Angebote, Kurse, Ablauf, Fragen, Kontakt, Partner)
 - `impressum.html`, `datenschutz.html` – Rechtsseiten
 - `css/styles.css` – Gestaltung (hell, ruhig, Akzentfarbe Blau `--akzent`), `js/main.js` – Navigation und Jahr
+- Anfrageformular (5 Schritte): Empfängeradresse in `index.html` bei `data-email=""` eintragen
 - `fonts/` – Instrument Sans, lokal eingebunden (SIL Open Font License)
 - `images/` – Fotos und Logo, alles lokal
 
