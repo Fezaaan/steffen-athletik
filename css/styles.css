@@ -88,6 +88,23 @@ header.nav.scrolled{border-bottom-color:var(--line)}
 .zeile-inhalt p+p{margin-top:18px}
 .zeile-inhalt .btn{margin-top:40px}
 
+.zeile-inhalt h3{margin-top:40px}
+.zeile-inhalt h3+p{margin-top:10px}
+.zeile-kopf .bild{margin:40px 0 0}
+.bild img{width:248px;border-radius:14px}
+.bild-quer img{width:363px}
+.leise{font-size:15px;line-height:1.75;color:var(--muted)}
+.aktionen{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:40px}
+.zeile-inhalt .aktionen .btn{margin-top:0}
+.mehr{font-weight:500;color:var(--ink);text-decoration:none}
+.mehr:hover{color:var(--akzent)}
+.mehr:hover .pfeil{transform:translateX(4px)}
+/* Liste mit feinen Linien (Qualifikationen) */
+.strich-liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.strich-liste li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink)}
+.zeile-inhalt .liste-titel{font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0;margin-bottom:16px}
+.lead+.strich-liste,p+.strich-liste{margin-top:32px}
+
 /* Angebote: Zeilen mit feiner Linie */
 .angebote{margin-top:48px;border-top:1px solid var(--line)}
 .angebot{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
@@ -204,6 +221,20 @@ footer .logo{color:#fff}
 
 
 /* =====================================================================
+   Unterseiten (Über mich, Training)
+   ===================================================================== */
+.seite-kopf{padding:72px 0 80px;background:var(--bg-soft)}
+.seite-kopf h1{margin-top:24px;font-size:clamp(40px,5.6vw,68px)}
+.seite-lead{margin-top:20px;font-size:clamp(18px,1.5vw,21px);color:var(--text)}
+.seite-schluss{padding:0 0 120px}
+.seite-schluss .wrap>*{position:relative}
+.seite-schluss .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.seite-schluss .wrap::before{content:"";flex:0 0 100%;height:1px;background:var(--line);margin-bottom:56px}
+main:has(.seite-kopf)+footer{padding-top:8px}
+main:has(.seite-kopf)+footer .foot-in{border-top:0}
+
+
+/* =====================================================================
    Rechtsseiten (Impressum, Datenschutz)
    ===================================================================== */
 .legal-hero{padding:72px 0 48px;background:var(--bg-soft)}
@@ -268,6 +299,12 @@ main:has(.legal-main)+footer .foot-in{border-top:0}
   .schritte{grid-template-columns:minmax(0,1fr);row-gap:32px;margin-top:36px}
   .schritt-nr{margin-bottom:16px}
   .faq-eintrag p{padding-right:0}
+  .seite-kopf{padding:48px 0 56px}
+  .seite-schluss{padding-bottom:72px}
+  .seite-schluss .wrap::before{margin-bottom:32px}
+  .zeile-kopf .bild{margin-top:28px}
+  .bild img{width:200px}
+  .bild-quer img{width:100%;max-width:363px}
   .kontakt{padding:72px 0}
   .anfrage{padding:28px 20px;border-radius:16px;margin-inline:-8px}
   .wahl span{padding:11px 14px}

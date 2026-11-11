@@ -6,6 +6,7 @@ Schriften, keine Cookies, keine Dienste Dritter.
 
 ## Dateien
 - `index.html` – Startseite (Angebote, Kurse, Ablauf, Fragen, Kontakt, Partner)
+- `ueber-mich.html`, `training.html` – Unterseiten mit den ausführlichen Texten
 - `impressum.html`, `datenschutz.html` – Rechtsseiten
 - `css/styles.css` – Gestaltung (hell, ruhig, Akzentfarbe Blau `--akzent`), `js/main.js` – Navigation und Jahr
 - Anfrageformular (5 Schritte): Empfängeradresse in `index.html` bei `data-email=""` eintragen
