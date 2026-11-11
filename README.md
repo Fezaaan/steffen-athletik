@@ -7,8 +7,8 @@ Schriften, keine Cookies, keine Dienste Dritter.
 ## Dateien
 - `index.html` – Startseite (Angebote, Kurse, Ablauf, Fragen, Kontakt, Partner)
 - `impressum.html`, `datenschutz.html` – Rechtsseiten
-- `css/styles.css` – Gestaltung (hell, Akzentfarbe Himmelblau `--blau…`), `js/main.js` – Scroll-Effekte
-- `fonts/` – Noto Sans, lokal eingebunden (SIL Open Font License)
+- `css/styles.css` – Gestaltung (hell, ruhig, Akzentfarbe Blau `--akzent`), `js/main.js` – Navigation und Jahr
+- `fonts/` – Instrument Sans, lokal eingebunden (SIL Open Font License)
 - `images/` – Fotos und Logo, alles lokal
 
 ## Vor dem Livegang ausfüllen

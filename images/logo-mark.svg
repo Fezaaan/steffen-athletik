@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Steffen Goller">
-  <rect width="64" height="64" rx="16" fill="#0A84C6"/>
+  <rect width="64" height="64" rx="16" fill="#0B6FAE"/>
   <!-- Kettlebell: Griff und Kugel -->
   <path d="M22 27c-1.6-2-2.4-4.2-2.4-6.6C19.6 14.6 25 11 32 11s12.4 3.6 12.4 9.4c0 2.4-.8 4.6-2.4 6.6" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
   <circle cx="32" cy="38" r="15" fill="#FFFFFF"/>
-  <rect x="26" y="34" width="12" height="4" rx="2" fill="#0A84C6"/>
+  <rect x="26" y="34" width="12" height="4" rx="2" fill="#0B6FAE"/>
 </svg>
