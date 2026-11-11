@@ -1,0 +1,341 @@
+/* =====================================================================
+   Steffen Goller – Personaltraining
+   Ruhig und klar: weiße Seite, ein Raster, viel Luft, feine Linien.
+   Eine Akzentfarbe (Blau) nur für Knöpfe, Links und Ziffern.
+   Keine Verläufe, keine Schatten, keine Dekoration.
+   Schrift: Instrument Sans, lokal in /fonts (SIL Open Font License).
+   ===================================================================== */
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/instrument-sans-400.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/instrument-sans-500.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/instrument-sans-600.woff2) format("woff2")}
+
+:root{
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --bg:#FFFFFF;
+  --bg-soft:#F4F7F9;
+  --ink:#0F1C28;          /* Überschriften */
+  --text:#3D4A56;         /* Fließtext */
+  --muted:#6A7783;
+  --line:#DFE5EA;
+
+  --akzent:#0B6FAE;       /* Knöpfe, Links, Ziffern */
+  --akzent-dunkel:#095C91;
+  --akzent-hell:#E8F2F9;
+
+  --nacht:#0F1C28;        /* Kontakt und Fuß */
+  --nacht-text:#B9C4CE;
+  --nacht-linie:rgba(255,255,255,.14);
+
+  --maxw:1160px;
+  --rand:32px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+[hidden]{display:none!important}
+::selection{background:var(--akzent);color:#fff}
+:focus-visible{outline:2px solid var(--akzent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{margin:0;color:var(--ink);font-weight:600;text-wrap:balance}
+h1{font-size:clamp(44px,6.4vw,80px);line-height:1.02;letter-spacing:-.035em}
+h2{font-size:clamp(28px,3.2vw,40px);line-height:1.12;letter-spacing:-.025em}
+h3{font-size:20px;line-height:1.3;letter-spacing:-.01em}
+p{margin:0;text-wrap:pretty}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--rand)}
+
+.skip-link{position:absolute;left:-999px;top:12px;background:#fff;color:var(--ink);padding:10px 14px;border-radius:8px;z-index:100}
+.skip-link:focus{left:12px}
+
+/* Knopf: flach, eine Farbe */
+.btn{display:inline-flex;align-items:center;justify-content:center;font:inherit;font-size:16px;font-weight:500;line-height:1;
+  padding:16px 24px;border-radius:10px;border:0;cursor:pointer;background:var(--akzent);color:#fff;text-decoration:none;
+  transition:background .18s ease}
+.btn:hover{background:var(--akzent-dunkel)}
+.btn-sm{padding:12px 18px;font-size:15px}
+.pfeil{display:inline-block;color:var(--akzent);transition:transform .2s var(--ease)}
+
+/* ---------- Navigation ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:saturate(160%) blur(12px);-webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .2s ease}
+header.nav.scrolled{border-bottom-color:var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-size:18px;font-weight:600;letter-spacing:-.015em}
+.logo .mk{width:32px;height:32px}
+.nav-links-l{display:flex;align-items:center;gap:20px}
+
+/* Aufklappmenü oben links */
+.menue{position:relative}
+.menue summary{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:1px solid var(--line);border-radius:10px;
+  font-size:15px;font-weight:500;color:var(--ink);cursor:pointer;list-style:none;user-select:none;transition:border-color .15s ease,background .15s ease}
+.menue summary::-webkit-details-marker{display:none}
+.menue summary:hover{border-color:#AEB8C1}
+.menue[open] summary{background:var(--bg-soft);border-color:#AEB8C1}
+.menue-icon{position:relative;width:16px;height:12px;flex:none}
+.menue-icon::before,.menue-icon::after{content:"";position:absolute;left:0;right:0;height:1.5px;background:var(--ink);border-radius:2px;
+  transition:transform .2s var(--ease),top .2s var(--ease)}
+.menue-icon::before{top:2px}
+.menue-icon::after{top:9px}
+.menue[open] .menue-icon::before{top:5.5px;transform:rotate(45deg)}
+.menue[open] .menue-icon::after{top:5.5px;transform:rotate(-45deg)}
+.menue-feld{position:absolute;left:0;top:calc(100% + 10px);z-index:60;width:260px;padding:8px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;box-shadow:0 12px 32px rgba(15,28,40,.10)}
+.menue-feld ul{list-style:none;margin:0;padding:0}
+.menue-feld a{display:block;padding:11px 12px;border-radius:8px;font-size:16px;font-weight:500;color:var(--ink);text-decoration:none;transition:background .12s ease}
+.menue-feld a:hover{background:var(--bg-soft)}
+.menue-feld a[aria-current="page"]{color:var(--akzent)}
+.menue-klein{margin-top:8px!important;padding-top:8px!important;border-top:1px solid var(--line)}
+.menue-klein a{font-size:14px;font-weight:400;color:var(--muted);padding:8px 12px}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--bg-soft)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:80px;align-items:center;padding-top:88px;padding-bottom:88px}
+.hero-lead{margin-top:28px;max-width:34em;font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:var(--text)}
+.hero .btn{margin-top:40px}
+.hero-bild{margin:0}
+.hero-bild img{width:200px;border-radius:14px}
+
+/* ---------- Abschnitte ---------- */
+.abschnitt{padding:120px 0}
+.abschnitt-linie{padding-top:0}
+.abschnitt-linie>.wrap::before{content:"";display:block;height:1px;background:var(--line);margin-bottom:120px;grid-column:1/-1}
+/* Überschrift links, Inhalt rechts */
+.zeile{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:80px;align-items:start}
+.lead{font-size:clamp(19px,1.6vw,22px);line-height:1.45;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.zeile-inhalt p+p{margin-top:18px}
+.zeile-inhalt .btn{margin-top:40px}
+
+.zeile-inhalt h3{margin-top:40px}
+.zeile-inhalt h3+p{margin-top:10px}
+.zeile-kopf .bild{margin:40px 0 0}
+.bild img{width:248px;border-radius:14px}
+.bild-quer img{width:363px}
+.leise{font-size:15px;line-height:1.75;color:var(--muted)}
+.aktionen{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px;margin-top:40px}
+.zeile-inhalt .aktionen .btn{margin-top:0}
+.mehr{font-weight:500;color:var(--ink);text-decoration:none}
+.mehr:hover{color:var(--akzent)}
+.mehr:hover .pfeil{transform:translateX(4px)}
+/* Liste mit feinen Linien (Qualifikationen) */
+.strich-liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.strich-liste li{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--ink)}
+.zeile-inhalt .liste-titel{font-size:15px;font-weight:600;color:var(--muted);letter-spacing:0;margin-bottom:16px}
+.lead+.strich-liste,p+.strich-liste{margin-top:32px}
+
+/* Angebote: Zeilen mit feiner Linie */
+.angebote{margin-top:48px;border-top:1px solid var(--line)}
+.angebot{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.angebot p{font-size:16px}
+
+/* Group Training: drei Spalten */
+.spalten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:48px}
+.spalte{display:block;padding-top:24px;border-top:2px solid var(--ink);text-decoration:none;color:inherit}
+.spalte p{margin-top:8px;font-size:16px;color:var(--muted)}
+.spalte-link:hover .pfeil{transform:translateX(4px)}
+
+/* ---------- Kurse ---------- */
+.kurse{padding:0 0 0}
+.kurs-flaeche{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:center;
+  padding:72px;background:var(--akzent-hell);border-radius:20px}
+.kurs-text{max-width:34em}
+.kurs-text .lead{margin-top:20px}
+.kurs-text p+p{margin-top:12px}
+.kurs-text .btn{margin-top:36px}
+.kurs-bild{margin:0}
+.kurs-bild img{width:160px;border-radius:8px}
+
+/* ---------- Ablauf ---------- */
+.schritte{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.schritt{padding-top:24px;border-top:1px solid var(--line)}
+.schritt-nr{display:block;margin-bottom:28px;font-size:15px;font-weight:600;color:var(--akzent);font-variant-numeric:tabular-nums}
+.schritt-nr::before{content:"0"}
+.schritt p{margin-top:8px;font-size:16px}
+
+/* ---------- Fragen ---------- */
+.faq-liste{border-top:1px solid var(--line)}
+.faq-eintrag{border-bottom:1px solid var(--line)}
+.faq-eintrag summary{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;cursor:pointer;list-style:none}
+.faq-eintrag summary::-webkit-details-marker{display:none}
+.faq-eintrag summary::after{content:"";flex:none;width:14px;height:14px;
+  background:linear-gradient(var(--ink),var(--ink)) center/100% 1.5px no-repeat,linear-gradient(var(--ink),var(--ink)) center/1.5px 100% no-repeat;
+  transition:transform .25s var(--ease)}
+.faq-eintrag[open] summary::after{transform:rotate(45deg)}
+.faq-eintrag summary:hover h3{color:var(--akzent)}
+.faq-eintrag h3{font-size:18px;font-weight:500;transition:color .15s ease}
+.faq-eintrag p{padding:0 40px 24px 0;font-size:16px;max-width:60ch}
+
+/* ---------- Partner ---------- */
+.partner-liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.partner-liste a{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.partner-liste a:hover .pfeil{transform:translate(2px,-2px)}
+.partner-liste a:hover .partner-name{color:var(--akzent)}
+.partner-name{font-size:18px;font-weight:500;color:var(--ink);transition:color .15s ease}
+.partner-marke{display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px}
+.partner-marke img{border-radius:4px}
+.partner-text{font-size:15px;color:var(--muted)}
+
+/* ---------- Kontakt ---------- */
+.kontakt{background:var(--nacht);color:var(--nacht-text);padding:112px 0}
+.kontakt h2,.kontakt h3{color:#fff}
+.kontakt-inhalt{margin-top:48px}
+.kontakt-inhalt p{margin-top:10px}
+.kontakt-liste{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--nacht-linie)}
+.kontakt-liste li{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--nacht-linie);color:#fff;font-size:17px}
+.kontakt-liste svg{flex:none;color:var(--nacht-text)}
+.todo{background:var(--akzent-hell);color:var(--akzent-dunkel);padding:2px 8px;border-radius:6px;font-size:.9em;font-weight:500}
+
+/* Anfrage in fünf Schritten: weiße Karte auf dunklem Grund */
+.anfrage{background:#fff;color:var(--text);border-radius:20px;padding:40px}
+.anfrage-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.anfrage-titel{font-size:15px;font-weight:600;color:var(--ink)}
+.anfrage-stand{font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.anfrage-balken{height:3px;margin:16px 0 32px;background:var(--line);border-radius:3px;overflow:hidden}
+.anfrage-balken span{display:block;height:100%;width:20%;background:var(--akzent);border-radius:3px;transition:width .3s var(--ease)}
+.f-schritt{margin:0;padding:0;border:0;min-width:0}
+.f-schritt+.f-schritt{margin-top:40px}
+.anfrage.js .f-schritt+.f-schritt{margin-top:0}
+.f-schritt legend{padding:0;font-size:clamp(22px,2vw,26px);line-height:1.2;font-weight:600;letter-spacing:-.02em;color:var(--ink);outline:0}
+.f-hinweis{margin-top:8px;font-size:15px;color:var(--muted)}
+.wahl-gruppe{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.wahl{position:relative;cursor:pointer}
+.wahl input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.wahl span{display:flex;align-items:center;gap:10px;padding:12px 18px;border:1px solid var(--line);border-radius:10px;
+  font-size:16px;font-weight:500;color:var(--ink);transition:border-color .15s ease,background .15s ease}
+.wahl span::before{content:"";flex:none;width:16px;height:16px;border:1.5px solid #AEB8C1;border-radius:4px;background:#fff center/12px no-repeat;
+  transition:background-color .15s ease,border-color .15s ease}
+.wahl:hover span{border-color:#AEB8C1}
+.wahl input:checked+span{border-color:var(--akzent);background:var(--akzent-hell)}
+.wahl input:checked+span::before{border-color:var(--akzent);background-color:var(--akzent);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m2.5 6.2 2.3 2.3 4.7-5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.wahl input:focus-visible+span{outline:2px solid var(--akzent);outline-offset:2px}
+.feld{display:block;margin-top:24px}
+.feld>span{display:block;margin-bottom:8px;font-size:15px;font-weight:500;color:var(--ink)}
+.feld small{font-size:inherit;font-weight:400;color:var(--muted)}
+.feld input,.feld textarea{display:block;width:100%;padding:13px 14px;border:1px solid #C9D1D8;border-radius:10px;background:#fff;
+  font:inherit;font-size:16px;color:var(--ink);transition:border-color .15s ease,box-shadow .15s ease}
+.feld textarea{resize:vertical;min-height:140px;line-height:1.5}
+.feld input:focus,.feld textarea:focus{outline:0;border-color:var(--akzent);box-shadow:0 0 0 3px var(--akzent-hell)}
+.f-klein{margin-top:20px;font-size:14px;line-height:1.55;color:var(--muted)}
+.f-klein a{color:var(--akzent)}
+.f-fehler{margin-top:20px;padding:12px 14px;border-radius:10px;background:#FCEDEC;color:#A32620;font-size:15px;font-weight:500}
+.anfrage-fuss{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:32px}
+.anfrage-fuss .btn{margin-left:auto}
+.f-zurueck{padding:10px 0;border:0;background:none;font:inherit;font-size:16px;font-weight:500;color:var(--text);cursor:pointer}
+.f-zurueck:hover{color:var(--ink)}
+.anfrage-fertig{outline:0}
+.anfrage-fertig .anfrage-titel{font-size:clamp(22px,2vw,26px);letter-spacing:-.02em}
+.anfrage-fertig p+p{margin-top:10px}
+.anfrage-fertig pre{margin:24px 0 0;padding:20px;border-radius:12px;background:var(--bg-soft);font:inherit;font-size:15px;line-height:1.6;
+  color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* ---------- Fuß ---------- */
+footer{background:var(--nacht);color:var(--nacht-text);padding:0 0 40px}
+.foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px 32px;padding-top:32px;border-top:1px solid var(--nacht-linie);font-size:14px}
+.foot-links{display:flex;gap:28px}
+.foot-links a{color:var(--nacht-text);text-decoration:none;transition:color .15s ease}
+.foot-links a:hover{color:#fff}
+footer .logo{color:#fff}
+
+
+/* =====================================================================
+   Unterseiten (Über mich, Training)
+   ===================================================================== */
+.seite-kopf{padding:72px 0 80px;background:var(--bg-soft)}
+.seite-kopf h1{margin-top:24px;font-size:clamp(40px,5.6vw,68px)}
+.seite-lead{margin-top:20px;font-size:clamp(18px,1.5vw,21px);color:var(--text)}
+.seite-schluss{padding:0 0 120px}
+.seite-schluss .wrap>*{position:relative}
+.seite-schluss .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
+.seite-schluss .wrap::before{content:"";flex:0 0 100%;height:1px;background:var(--line);margin-bottom:56px}
+main:has(.seite-kopf)+footer{padding-top:8px}
+main:has(.seite-kopf)+footer .foot-in{border-top:0}
+
+
+/* =====================================================================
+   Rechtsseiten (Impressum, Datenschutz)
+   ===================================================================== */
+.legal-hero{padding:72px 0 48px;background:var(--bg-soft)}
+.legal-back{font-size:15px;font-weight:500;color:var(--akzent);text-decoration:none}
+.legal-back:hover{color:var(--akzent-dunkel)}
+.legal-hero h1{font-size:clamp(36px,5vw,56px);margin-top:20px;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.legal-lead{margin-top:14px;color:var(--muted)}
+.legal-main{padding:56px 0 112px}
+.legal-content>*{max-width:760px}
+.legal-content h2{font-size:24px;letter-spacing:-.015em;margin:48px 0 12px;scroll-margin-top:96px;overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.legal-content h3{font-size:18px;margin:28px 0 8px}
+.legal-content p,.legal-content li,.legal-content address{font-size:16px;line-height:1.7;font-style:normal}
+.legal-content p,.legal-content address{margin:0 0 14px}
+.legal-content ul,.legal-content ol{padding-left:22px;margin:0 0 16px}
+.legal-content a{color:var(--akzent);text-underline-offset:.2em}
+.legal-content a:hover{color:var(--akzent-dunkel)}
+.legal-content strong{color:var(--ink);font-weight:600}
+.legal-card{background:var(--bg-soft);border-radius:12px;padding:24px 28px;margin:24px 0}
+.legal-card h3{margin:0 0 8px}
+.legal-card p:last-child{margin-bottom:0}
+.legal-toc{background:var(--bg-soft);border-radius:12px;padding:24px 28px;margin:0 0 16px}
+.legal-toc p{margin:0 0 10px;font-weight:600;color:var(--ink)}
+.legal-toc ol{columns:2 240px;column-gap:32px;margin:0}
+.legal-toc li{break-inside:avoid;font-size:15px}
+.legal-toc a{text-decoration:none;color:var(--text)}
+.legal-toc a:hover{color:var(--akzent)}
+.legal-stand{margin-top:40px!important;font-size:14px!important;color:var(--muted)}
+/* Der Fuß der Rechtsseiten schließt direkt an weißen Inhalt an */
+main:has(.legal-main)+footer{padding-top:8px}
+main:has(.legal-main)+footer .foot-in{border-top:0}
+
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width:1000px){
+  .zeile{grid-template-columns:minmax(0,1fr);row-gap:32px}
+  .abschnitt{padding:88px 0}
+  .abschnitt-linie{padding-top:0}
+  .abschnitt-linie>.wrap::before{margin-bottom:88px}
+  .hero-grid{gap:48px;padding-top:64px;padding-bottom:64px}
+  .schritte{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+  .kurs-flaeche{padding:56px;gap:40px}
+  .kontakt{padding:88px 0}
+}
+@media (max-width:700px){
+  :root{--rand:20px}
+  html{scroll-padding-top:76px}
+  .nav-in{height:64px;gap:12px}
+  .nav-links-l{gap:12px}
+  .menue summary{height:40px;padding:0 12px}
+  .menue-wort{display:none}
+  .logo{font-size:17px}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;padding-top:48px;padding-bottom:56px}
+  .hero-lead{margin-top:20px}
+  .hero .btn{margin-top:32px}
+  .hero-bild img{width:150px}
+  .abschnitt{padding:72px 0}
+  .abschnitt-linie{padding-top:0}
+  .abschnitt-linie>.wrap::before{margin-bottom:72px}
+  .angebot{grid-template-columns:minmax(0,1fr)}
+  .spalten{grid-template-columns:minmax(0,1fr);gap:28px;margin-top:36px}
+  .kurs-flaeche{grid-template-columns:minmax(0,1fr);padding:40px 24px;border-radius:16px}
+  .kurse .wrap{padding:0 12px}
+  .schritte{grid-template-columns:minmax(0,1fr);row-gap:32px;margin-top:36px}
+  .schritt-nr{margin-bottom:16px}
+  .faq-eintrag p{padding-right:0}
+  .seite-kopf{padding:48px 0 56px}
+  .seite-schluss{padding-bottom:72px}
+  .seite-schluss .wrap::before{margin-bottom:32px}
+  .zeile-kopf .bild{margin-top:28px}
+  .bild img{width:200px}
+  .bild-quer img{width:100%;max-width:363px}
+  .kontakt{padding:72px 0}
+  .anfrage{padding:28px 20px;border-radius:16px;margin-inline:-8px}
+  .wahl span{padding:11px 14px}
+  .foot-in{flex-direction:column;align-items:flex-start}
+  .legal-hero{padding:48px 0 36px}
+  .legal-main{padding:40px 0 80px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important}
+}
